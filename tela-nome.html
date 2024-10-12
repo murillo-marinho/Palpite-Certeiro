@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escolha Seu Nome</title>
+    <link rel="stylesheet" href="css/tela-nome.css">
+</head>
+<body>
+    <div class="video-background">
+        <video autoplay loop muted>
+            <source src="video/background-star.webm" type="video/webm">
+        </video>
+    </div>
+    <div class="back-button" onclick="window.location.href='index.html'">VOLTAR</div>
+    <div class="overlay-background"></div>
+    <div class="content">
+        <div class="container">
+            <img src="img/nome.png" alt="Digite seu Nome:" class="caixa">
+            <input type="text" id="playerName" placeholder="Seu nome aqui" required>
+            <button onclick="saveName()">Começar</button>
+            <p id="message"></p>
+        </div>
+
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

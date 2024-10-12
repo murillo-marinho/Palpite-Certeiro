@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palpite Certeiro</title>
+    <link rel="stylesheet" href="css/guia.css">
+</head>
+<body>
+    <div class="overlay" id="overlay"></div>
+    <div class="circle back-button" onclick="window.location.href='index.html'">SAIR</div>
+
+    <div class="video-background">
+        <video autoplay loop muted>
+            <source src="video/background-star.webm" type="video/mp4">
+        </video>
+    </div>
+    <div class="overlay-background"></div>
+    <div class="content">
+        <div class="container">
+            <img src="img/Guia.png" alt="Escolha seu guia" class="caixa">
+            <div class="options">
+                <div class="option">
+                    <img src="img/Temis.png" alt="Imagem de Têmis, deusa da justiça" class="imge" onclick="fadeOutAndRedirect('guiaTemis.html')">
+                    <div class="circle" onclick="openModal('temisModal')">!</div>
+                </div>
+                <div class="option">
+                    <img src="img/zeus.png" alt="Imagem de Zeus, deus do céu" class="imge" onclick="fadeOutAndRedirect('guiazeus.html')">
+                    <div class="circle" onclick="openModal('zeusModal')">!</div>
+                </div>
+                <div class="option">
+                    <img src="img/atena.png" alt="Imagem de Atena, deusa da sabedoria" class="imge"onclick="fadeOutAndRedirect('guiaatena.html')">
+                    <div class="circle" onclick="openModal('atenaModal')">!</div>
+                </div>
+            </div>
+
+            <!-- Modal Têmis -->
+            <div id="temisModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal('temisModal')">&times;</span>
+                    <h2>Têmis</h2>
+                    <p>Têmis é a deusa da justiça e da ordem. Ela representa a lei e a moralidade e é uma das figuras mais importantes do Olimpo.
+                        <br><br>
+                        Durante a jornada, quando você solicitar a ajuda do guia, ela te ajudará retirando 2 alternativas erradas (limite de 2 vezes por fase).
+                    </p>
+                </div>
+            </div>
+
+            <!-- Modal Zeus -->
+            <div id="zeusModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal('zeusModal')">&times;</span>
+                    <h2>Zeus</h2>
+                    <p>Zeus é o deus do céu e governante dos deuses do Olimpo. Ele é conhecido por seu poder e sua sabedoria.
+                        <br><br>
+                        Durante a jornada, quando você solicitar a ajuda do guia, ele te ajudará permitindo que você pule a pergunta (limite de 1 vez por fase).
+                    </p>
+                </div>
+            </div>
+
+            <!-- Modal Atena -->
+            <div id="atenaModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal('atenaModal')">&times;</span>
+                    <h2>Atena</h2>
+                    <p>Atena é a deusa da sabedoria, da guerra e da estratégia. Ela é uma das divindades mais veneradas da mitologia grega.
+                        <br><br>
+                        Durante a jornada, quando você solicitar a ajuda do guia, ela te ajudará com dicas sobre a resposta. (limite de 3 vezes por fase).
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/script.js"></script> 
+</body>
+</html>
