@@ -1,11 +1,10 @@
-window.onload = function() {
-    const backgroundSound = document.getElementById('backgroundSound');
-    backgroundSound.play();
-};
+document.addEventListener("DOMContentLoaded", ()=>{
 
-document.getElementById('contentFrame').onload = function() {
-    const backgroundSound = document.getElementById('backgroundSound');
-    if (backgroundSound.paused) {
+    window.onload = function() {
+        const backgroundSound = document.getElementById('backgroundSound');
         backgroundSound.play();
-    }
-};
+    };
+    
+
+})
+

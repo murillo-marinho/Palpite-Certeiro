@@ -12,6 +12,11 @@ iframe {
 audio {
     display: none; 
 }
-@media screen {
+@media (width < 680px ){
+    iframe{
+        rotate: 90deg;
+        width: 100vw;
+        height: 100vh;
+    }
     
 }
