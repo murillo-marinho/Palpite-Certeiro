@@ -33,10 +33,15 @@ body {
     color: #6c3b00;
 }
 
+
+
 .options {
+    
     display: flex;
     justify-content: center;
     gap: 50px;
+    
+   padding: auto;
 }
 
 .option {
@@ -48,7 +53,7 @@ body {
 
 .options img {
     margin-top: 30px;
-    width: 300px;
+    width: 20vw;
     height: auto;
     transition: transform 0.3s ease, filter 0.3s ease;
     cursor: pointer;
@@ -86,25 +91,7 @@ body {
     color: #d69d73;
 }
 
-.back-button {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.5rem;
-    padding: 5px;
-    border: 2px solid #d69d73;
-    background-color: rgba(255, 255, 255, 0.1);
-    color: #fff;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
+
 
 .video-background {
     position: fixed;
@@ -143,6 +130,8 @@ video {
 }
 
 .caixa {
+    
+    top: 20px;
     width: 500px;
     height: auto;
     margin-top: -30px;
@@ -211,3 +200,32 @@ video {
     background-color: rgba(255, 255, 255, 0.3);
     color: #d69d73;
 }
+
+@media (max-height: 500px) {
+    .caixa {
+        width: 400px;
+        margin-top: 1%;
+    }
+
+    .circle {
+        width: 15px;
+        height: 15px;
+        margin-top: 10px;
+        font-size: 1rem;      
+        margin-bottom: 0;
+        
+    }
+    .back-button {
+        top: 10px;
+        left: 2%; 
+        border-radius: 25px;
+        width: 100px;
+        font-size: 1rem;
+        
+    }
+    .options img {
+        margin-top: 10px;
+    }
+}
+
+

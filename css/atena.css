@@ -116,3 +116,18 @@ video {
     background-color: #b67b5a;
 }
 
+@media (height < 500px){
+    .deus-name {
+        font-size: 5vw;
+
+    }
+    
+    .dialog-box {
+        font-size: 0.9rem;
+    }
+    .deus-title {
+        font-size: 0.9rem;
+    }
+
+}
+
