@@ -7,9 +7,20 @@
     <link rel="stylesheet" href="css/fases.css">
 </head>
 <body>
-
+    <div class="overlay" id="overlay"></div>
     <div class="top-frame"></div>
+    <button class="exit-button"id="exitButton">Sair</button>
 
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Você tem certeza que deseja sair?</h2>
+            <p>Você retornará a página inicial e perderá seu progresso</p>
+            <div class="modal-buttons">
+                <button id="confirmExit">Confirmar</button>
+            </div>
+        </div>
+    </div>
     <img src="img/caminho.png" alt="Escolha seu guia" class="caixa">
 
     <div class="video-background">
@@ -21,26 +32,27 @@
     <div class="overlay-background"></div>
     
     <div class="path">
-        <div class="phase" style="top: 40%; left: 15%;">
-            <img src="img/reino-afrodite.png" alt="Reino de Afrodite" class="portal-image">
+        <div class="phase" style="top: 20%; left: 15%;" >
+            <img src="img/reino-demeter.png" alt="Reino de Demeter" class="portal-image" onclick="fadeOutAndRedirect('reino-demeter.html')">
             <img src="img/particles-petalas.gif" alt="Brilho" class="brightness-effect">
-            <p>REINO DE AFRODITE</p>
+            <p>REINO DE DEMÉTER</p>
         </div>
         
         <div class="phase" style="top: 20%; left: 35%;">
-            <img src="img/reino-poseidon.png" alt="Reino de Poseidon" class="portal-image">
+            <img src="img/reino-poseidon.png" alt="Reino de Poseidon" class="portal-image"onclick="fadeOutAndRedirect('reino-poseidon.html')">
             <img src="img/particles-water.gif" alt="Brilho" class="brightness-effect"> 
             <p>REINO DE POSEIDON</p>
         </div>
         
-        <div class="phase" style="top: 40%; left: 55%;">
-            <img src="img/reino-submundo.png" alt="Submundo" class="portal-image">
+        <div class="phase" style="top: 20%; left: 55%;">
+            <img src="img/reino-submundo.png" alt="Submundo" class="portal-image"onclick="fadeOutAndRedirect('reino-submundo.html')">
             <img src="img/particles-fire.gif" alt="Brilho" class="brightness-effect"> 
             <p>SUBMUNDO</p>
         </div>
         
         <div class="phase" style="top: 20%; left: 75%;">
-            <img src="img/reino-olimpo.png" alt="Monte Olimpo" class="portal-image">
+            <img src="img/reino-olimpo.png" alt="Monte Olimpo" class="portal-image"onclick="fadeOutAndRedirect('.html')">
+            <img src="img/nuvens.gif" alt="Brilho" class="brightness-effect1"> 
             <img src="img/particles-briho.gif" alt="Brilho" class="brightness-effect"> 
             <p>MONTE OLIMPO</p>
         </div>
