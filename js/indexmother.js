@@ -4,7 +4,5 @@ document.addEventListener("DOMContentLoaded", ()=>{
         const backgroundSound = document.getElementById('backgroundSound');
         backgroundSound.play();
     };
-    
-
 })
 

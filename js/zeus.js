@@ -23,7 +23,8 @@ function redirect() {
     document.body.style.opacity = '0';
 
     setTimeout(() => {
-        window.location.href = 'CaminhoFases.html';
+        
+        window.location.href = 'Fases.html';
     }, 2000);
 }
 
