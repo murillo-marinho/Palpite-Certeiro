@@ -24,7 +24,7 @@ function redirect() {
 
     setTimeout(() => {
         
-        window.location.href = 'Fases.html';
+        window.location.href = 'fases.html';
     }, 2000);
 }
 

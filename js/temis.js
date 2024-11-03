@@ -23,7 +23,7 @@ function redirect() {
     document.body.style.opacity = '0';
 
     setTimeout(() => {
-        window.location.href = 'Fases.html';
+        window.location.href = 'fases.html';
     }, 2000);
 }
 
