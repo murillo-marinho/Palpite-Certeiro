@@ -37,15 +37,23 @@ video {
 }
 
 
+
 .path {
-    position: relative;
+    justify-content: space-evenly;
+    display: flex;
+    align-items: center;
     width: 100%;
     height: 100%;
+    flex-direction: row;
 }
 
 .phase {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    flex-direction: column;
+    width: 250px;
     z-index: 2000;
-    position: absolute;
     text-align: center;
     color: #fff;
     cursor: pointer;
@@ -55,7 +63,15 @@ video {
     transform: scale(1.1);
 }
 
+.portal-image, .brightness-effect, .brightness-effect1{
+    left: 50%;
+     transform: translateX(-50%);
+     position: relative;
+
+}
+
 .phase img {
+     
     width: 150px;
     height: 150px;
     filter: drop-shadow(0 0 15px #2c0e0197);
@@ -125,42 +141,34 @@ video {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #000000;
+    background-color: #000a2d;
     background-size: cover;
     background-position: center;
-    opacity: 0.1;
-    z-index: 1;
+    opacity: 0.5;
+    z-index: 10;
 }
 
+.brightness-effect { 
 
-.brightness-effect {
-    position: absolute;      
-    width: 80px;         
-    height: 80px;         
-    top: 50%;             
-    left: 50%;              
-    transform: translate(-50%, -80%); 
-    z-index: 1;              
+    top: -10px;
+    position: absolute;        
+    z-index: 10;              
     pointer-events: none;    
 }
 
-.brightness-effect1 {
-    position: absolute;      
-    width: 80px;         
-    height: 80px;         
-    top: 50%;             
-    left: 50%;              
-    transform: translate(-50%, -40%); 
-    z-index: 1;              
+.brightness-effect1 {    
+    position: absolute;    
+    z-index: 10;              
     pointer-events: none;    
 }
+
 .exit-button {
     position: absolute;
-    top: 100px;
-    left: 70px;
+    top: 90px;
+    left: 90px;
     border-radius: 15px;
     width: 150px;
-    height: 40px;
+    height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -174,6 +182,78 @@ video {
     transition: background-color 0.3s ease, color 0.3s ease;
     z-index: 2000;
 }
+
+.name {
+    position: absolute;
+    top: 90px;
+    right: 150px;
+    border-radius: 15px;
+    width: auto;
+    height: 40px;
+    display: flex;
+    justify-content: left;
+    margin-left: 5px;
+    align-items:center;
+    font-size: 1.2rem;
+    justify-content: center;
+    padding: 5px 20px;
+    border: 2px solid #d69d73;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    z-index: 2000;
+}
+
+.img-perfil{
+        z-index: 200;
+        position: absolute;
+        top: 90px;
+        right: 90px;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2rem;
+        padding: 5px;
+        border: 2px solid #d69d73;
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        transition: background-color 0.3s ease, color 0.3s ease;
+        z-index: 2000;
+    
+}
+.points{
+    position: absolute;
+        display: flex;
+        position: absolute;
+        top: 150px;
+        right: 85px;
+        border: 2px solid #d69d73;
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        border-radius: 15px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        z-index: 2000;
+        width: 150px;
+        height: 40px;
+        z-index: 2000;
+        align-items: center;
+        padding: 5px 10px;
+        justify-content: space-around;
+
+}
+.points p{
+    
+}
+.points img{
+    width: 40px;
+}
+
 
 .exit-button:hover {
     background-color: rgba(255, 255, 255, 0.3);

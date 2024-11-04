@@ -21,7 +21,8 @@ function saveName() {
 
     if (playerName) {
         localStorage.setItem('playerName', playerName);
-        document.getElementById('message').textContent = 'Vamos. É hora de iniciar a sua jornada!';
+ 
+        document.getElementById('message').innerHTML = 'Vamos, '+ playerName +'! É hora de iniciar a sua jornada!';
 
         setTimeout(() => {
             window.location.href = 'guia.html';
@@ -48,6 +49,9 @@ function fadeOutAndRedirect(url) {
     }, 0);
 }
 
+const perfil = localStorage.getItem('playerName');
+const getNamespace = document.getElementById('getName');
+getNamespace.innerHTML = perfil;
 
 document.addEventListener('touchstart', function(event) {
     if (event.touches.length > 1) {
