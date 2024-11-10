@@ -20,6 +20,16 @@ function saveName() {
     const playerName = playerNameInput.value.trim();
 
     if (playerName) {
+        if(playerName.length >= 13){
+            playerNameInput.style.border = "3px solid #ff0000";
+            playerNameInput.value = "Nome precisa ter menos que 13 caracteres";
+
+            setTimeout(() => {
+                playerNameInput.value = "";
+            }, 5000);
+            return;
+        }
+
         localStorage.setItem('playerName', playerName);
  
         document.getElementById('message').innerHTML = 'Vamos, '+ playerName +'! É hora de iniciar a sua jornada!';

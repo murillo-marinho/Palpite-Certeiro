@@ -1,12 +1,3 @@
-function redirect() {
-    document.body.style.transition = 'opacity 2s';
-    document.body.style.opacity = '0';
-
-    setTimeout(() => {
-        window.location.href = 'Fases.html';
-    }, 2000);
-}
-
 window.onload = function() {
     document.body.style.opacity = '1';
     startTyping();
@@ -54,6 +45,6 @@ function redirect() {
     document.body.style.opacity = '0';
 
     setTimeout(() => {
-        window.location.href = 'Fases.html';
+        window.location.href = 'fase-temis-1.html';
     }, 2000);
 }

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palpite Certeiro - Fase 2</title>
+    <link rel="stylesheet" href="./css/fase-temis-zeus-atena.css">
+</head>
+<body>
+    <div class="video-background">
+        <video autoplay loop muted>
+            <source src="video/background_demeter.webm" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="container">
+        <header>
+            <button type="button" onclick="return history.back()">VOLTAR</button>
+
+            <div class="pontuation" id="pontuation"></div><!--pontuation-->
+
+            <div class="help">
+                <img src="./img/guia-ajuda.gif" alt="Guia de ajuda">
+            </div><!--help-->
+        </header>
+
+        <main>
+            <div class="main-wrapper">
+                <div class="questions">
+                    <h3>
+                        No reino da deusa Deméter, para que as plantas cresçam, é necessário que haja água e o solo seja fértil.
+                        Em qual das opções abaixo as plantas vão crescer?
+                    </h3>
+                </div><!--questions-->
+
+                <input type="hidden" name="page2" id="page2">
+    
+                <div class="responses">
+                    <div class="response-single">
+                        <button type="button" id="page2_btn1"> Há água, mas o solo não é fértil.</button>
+                    </div><!--response-single-->
+    
+                    <div class="response-single">
+                        <button type="button" id="page2_btn2"> Não há água, mas o solo é fértil.</button>
+                    </div><!--response-single-->
+    
+                    <div class="response-single">
+                        <button type="button" id="page2_btn3"> Há água e o solo é fértil.</button>
+                    </div><!--response-single-->
+    
+                    <div class="response-single">
+                        <button type="button" id="page2_btn4"> Não há água e o solo não é fértil.</button>
+                    </div><!--response-single-->
+                </div><!--responses-->
+            </div><!--main-wrapper-->
+            
+            
+        </main>
+    </div><!--container-->
+
+    <script src="js/script.js" defer></script> 
+    <script src="js/perguntas.js" defer></script>
+    <script src="js/pontuacao-demeter.js" defer></script>
+</body>
+</html>

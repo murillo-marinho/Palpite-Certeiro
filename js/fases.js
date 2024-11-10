@@ -1,3 +1,12 @@
+var totalPerguntasRespondidas = parseInt(localStorage.getItem('totalPerguntasRespondidas'));
+
+if(totalPerguntasRespondidas === 3){
+    const circleOne = document.getElementById('circle-1');
+    circleOne.style.display = "none";
+}
+
+
+
 function navigateToPhase(phase) {
 
     let url = '';
@@ -20,6 +29,7 @@ function navigateToPhase(phase) {
         window.location.href = url;
     }
 }
+
 window.onload = function() {
     document.body.style.opacity = '1';
 };
@@ -48,7 +58,6 @@ window.onclick = function(event) {
     }
 }
 
-
 confirmExit.onclick = function() {
 
     window.location.href = "home.html"; 
@@ -58,20 +67,33 @@ cancelExit.onclick = function() {
     modal.style.display = "none";
 }
 
-
 function fadeOutAndRedirect(url) {
     const overlay = document.getElementById('overlay');
     overlay.style.display = 'block';
-    overlay.style.pointerEvents = 'auto';
+    //overlay.style.pointerEvents = 'auto';
     overlay.style.backgroundColor = 'rgba(0, 0, 0, 1)';
     overlay.style.opacity = '0';
 
-    setTimeout(() => {
-        overlay.style.transition = 'opacity 2s';
-        overlay.style.opacity = '1';
-
+    var canRedirect = true;
+     
+    if (url === "reino-poseidon.html" && totalPerguntasRespondidas < 3) { 
+        alert("Você precisa responder a pelo menos 3 perguntas para acessar esta página.");
+        canRedirect = false; 
+    } else if (url === "reino-submundo.html" && totalPerguntasRespondidas < 6) { 
+        alert("Você precisa responder a pelo menos 6 perguntas para acessar esta página.");
+        canRedirect = false; 
+    } else if (url === ".html" && totalPerguntasRespondidas < 9) {
+        alert("Você precisa responder a pelo menos 9 perguntas para acessar esta página."); 
+        canRedirect = false; 
+    } 
+    
+    if (canRedirect) {
         setTimeout(() => {
-            window.location.href = url;
-        }, 2000);
-    }, 0);
+            overlay.style.transition = 'opacity 2s';
+            overlay.style.opacity = '1';
+            setTimeout(() => {
+                window.location.href = url; 
+                }, 2000); }
+                , 0); 
+            }
 }

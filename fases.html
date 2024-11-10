@@ -31,12 +31,11 @@
     
     <div class="overlay-background"></div>
     <div class="perfil">
-    <div class="name" id="getName"></div>
-    <img src="img/perfil.png" alt="" class="img-perfil">
-    <div class="points">
-        <p>50</p>
-        <img src="img/diamante.gif" alt="moedas">
-    </div>
+        <div class="name" id="getName"></div>
+        <img src="img/perfil.png" alt="" class="img-perfil">
+        <div class="points">
+            <div class="pontuation" id="pontuation"></div><!--pontuation-->
+        </div>
     </div>
     <div class="path">
         <div class="phase">
@@ -49,12 +48,15 @@
         <div class="phase">
             <img src="img/reino-poseidon.png" alt="Reino de Poseidon" class="portal-image"onclick="fadeOutAndRedirect('reino-poseidon.html')">
             <img src="img/particles-water.gif" alt="Brilho" class="brightness-effect"> 
+            <img src="img/cadeado.png" alt="circle" class="circle" id="circle-1">
+
             <p>REINO DE POSEIDON</p>
         </div>
         
         <div class="phase">
             <img src="img/reino-submundo.png" alt="Submundo" class="portal-image"onclick="fadeOutAndRedirect('reino-submundo.html')">
             <img src="img/particles-fire.gif" alt="Brilho" class="brightness-effect"> 
+            <img src="img/cadeado.png" alt="circle" class="circle" id="circle-2">
             <p>SUBMUNDO</p>
         </div>
         
@@ -62,6 +64,8 @@
             <img src="img/reino-olimpo.png" alt="Monte Olimpo" class="portal-image"onclick="fadeOutAndRedirect('.html')">
             <img src="img/nuvens.gif" alt="Brilho" class="brightness-effect1"> 
             <img src="img/particles-briho.gif" alt="Brilho" class="brightness-effect"> 
+            <img src="img/cadeado.png" alt="circle" class="circle" id="circle-3">
+
             <p>MONTE OLIMPO</p>
         </div>
     </div>
@@ -69,6 +73,7 @@
     <div class="bottom-frame"></div>
     
     <script src="js/script.js" defer></script>
+    <script src="js/pontuacao-fases.js" defer></script>
     <script src="js/fases.js" defer></script>
 </body>
 </html>
