@@ -19,10 +19,10 @@ if (page9 !== null) {
 
     localStorage.setItem('perguntasAcertadas', perguntasAcertadas);
 
-    const page9Btn1 = document.getElementById('res_1_questao_9_fase_submundo');
-    const page9Btn2 = document.getElementById('res_2_questao_9_fase_submundo');
-    const page9Btn3 = document.getElementById('res_3_questao_9_fase_submundo');
-    const page9Btn4 = document.getElementById('res_4_questao_9_fase_submundo');
+    const page9Btn1 = document.getElementById('res_1_questao_1_fase_submundo');
+    const page9Btn2 = document.getElementById('res_2_questao_1_fase_submundo');
+    const page9Btn3 = document.getElementById('res_3_questao_1_fase_submundo');
+    const page9Btn4 = document.getElementById('res_4_questao_1_fase_submundo');
 
     const totalPerguntasRespondidas = 1;
     localStorage.setItem('totalPerguntasRespondidas', totalPerguntasRespondidas);
@@ -43,7 +43,7 @@ if (page9 !== null) {
         page9Btn4.style.borderRadius = "5px";
 
         pointsAdd = 0;
-        points = pointsAdd;
+        points = points + pointsAdd;
         localStorage.setItem('points', points);
 
         setTimeout(() => {
@@ -67,7 +67,7 @@ if (page9 !== null) {
         page9Btn4.style.borderRadius = "5px";
 
         pointsAdd = 0;
-        points = pointsAdd;
+        points = points + pointsAdd;
         localStorage.setItem('points', points);
 
         setTimeout(() => {
@@ -91,7 +91,7 @@ if (page9 !== null) {
         page9Btn4.style.borderRadius = "5px";
 
         pointsAdd = 10;
-        points = pointsAdd;
+        points = points + pointsAdd;
         localStorage.setItem('points', points);
 
         setTimeout(() => {
@@ -115,7 +115,7 @@ if (page9 !== null) {
         page9Btn4.style.borderRadius = "5px";
 
         pointsAdd = 0;
-        points = pointsAdd;
+        points = points + pointsAdd;
         localStorage.setItem('points', points);
 
         setTimeout(() => {
@@ -133,10 +133,10 @@ if (page10 !== null) {
 
     localStorage.setItem('perguntasAcertadas', perguntasAcertadas);
 
-    const page10Btn1 = document.getElementById('res_1_questao_10_fase_submundo');
-    const page10Btn2 = document.getElementById('res_2_questao_10_fase_submundo');
-    const page10Btn3 = document.getElementById('res_3_questao_10_fase_submundo');
-    const page10Btn4 = document.getElementById('res_4_questao_10_fase_submundo');
+    const page10Btn1 = document.getElementById('res_1_questao_2_fase_submundo');
+    const page10Btn2 = document.getElementById('res_2_questao_2_fase_submundo');
+    const page10Btn3 = document.getElementById('res_3_questao_2_fase_submundo');
+    const page10Btn4 = document.getElementById('res_4_questao_2_fase_submundo');
     const totalPerguntasRespondidas = 2;
     localStorage.setItem('totalPerguntasRespondidas', totalPerguntasRespondidas);
 
@@ -266,10 +266,10 @@ if (page11 !== null) {
 
     localStorage.setItem('perguntasAcertadas', perguntasAcertadas);
 
-    const page11Btn1 = document.getElementById('res_1_questao_11_fase_submundo');
-    const page11Btn2 = document.getElementById('res_2_questao_11_fase_submundo');
-    const page11Btn3 = document.getElementById('res_3_questao_11_fase_submundo');
-    const page11Btn4 = document.getElementById('res_4_questao_11_fase_submundo');
+    const page11Btn1 = document.getElementById('res_1_questao_3_fase_submundo');
+    const page11Btn2 = document.getElementById('res_2_questao_3_fase_submundo');
+    const page11Btn3 = document.getElementById('res_3_questao_3_fase_submundo');
+    const page11Btn4 = document.getElementById('res_4_questao_3_fase_submundo');
     const totalPerguntasRespondidas = 3;
     localStorage.setItem('totalPerguntasRespondidas', totalPerguntasRespondidas);
 
@@ -374,20 +374,22 @@ if (page11 !== null) {
 
 //page 4
 if (page12 !== null) {
-    const perguntasAcertadas = localStorage.getItem('perguntasAcertadasSubmundo') ? parseInt(localStorage.getItem('perguntasAcertadasSubmundo')) + 1 : 1;
+    console.log(parseInt(localStorage.getItem('totalPerguntasRespondidas')));
+
+    const perguntasAcertadas = localStorage.getItem('perguntasAcertadasSubmundo') ? parseInt(localStorage.getItem('perguntasAcertadasSubmundo')) : 1;
     localStorage.setItem('perguntasAcertadasSubmundo',perguntasAcertadas);
 
-    const questaoSubmundo = localStorage.getItem('questaoAtualSubmundo') ? parseInt(localStorage.getItem('questaoAtualSubmundo')) + 1 : 1;
+    const questaoSubmundo = localStorage.getItem('questaoAtualSubmundo') ? parseInt(localStorage.getItem('questaoAtualSubmundo')) : 1;
     localStorage.setItem('questaoAtualSubmundo',questaoSubmundo);
 
     localStorage.setItem('perguntasAcertadas',perguntasAcertadas);
 
-    const page12Btn1 = document.getElementById('res_1_questao_12_fase_submundo');
-    const page12Btn2 = document.getElementById('res_2_questao_12_fase_submundo');
-    const page12Btn3 = document.getElementById('res_3_questao_12_fase_submundo');
-    const page12Btn4 = document.getElementById('res_4_questao_12_fase_submundo');
+    const page12Btn1 = document.getElementById('res_1_questao_4_fase_submundo');
+    const page12Btn2 = document.getElementById('res_2_questao_4_fase_submundo');
+    const page12Btn3 = document.getElementById('res_3_questao_4_fase_submundo');
+    const page12Btn4 = document.getElementById('res_4_questao_4_fase_submundo');
 
-    const totalPerguntasRespondidas = localStorage.getItem('totalPerguntasRespondidas') ? parseInt(localStorage.getItem('totalPerguntasRespondidas')) + 1 : 1;;
+    const totalPerguntasRespondidas = localStorage.getItem('totalPerguntasRespondidas') ? parseInt(localStorage.getItem('totalPerguntasRespondidas')) : 1;;
     localStorage.setItem('totalPerguntasRespondidas', totalPerguntasRespondidas);
 
     page12Btn1.addEventListener('click', () => {
@@ -437,6 +439,24 @@ if (page12 !== null) {
         page12Btn3.style.borderRadius = "5px";
         page12Btn4.style.border = "3px solid #ff0000";
         page12Btn4.style.borderRadius = "5px";
+
+        pointsAdd = 10;
+        points = points + pointsAdd;
+        localStorage.setItem('points', points);
+
+        setTimeout(() => {
+            if(parseInt(localStorage.getItem('totalPerguntasRespondidas')) === 1){
+                window.location.href = "fase-submundo-2.html";    
+            }
+
+            if(parseInt(localStorage.getItem('totalPerguntasRespondidas')) === 2){
+                window.location.href = "fase-submundo-3.html";    
+            }
+
+            if(parseInt(localStorage.getItem('totalPerguntasRespondidas')) === 3){
+                window.location.href = "fases.html";    
+            }
+        }, 3000);
     });
 
     page12Btn3.addEventListener('click', () => {
@@ -506,4 +526,5 @@ if (page12 !== null) {
         }, 3000);
         
     });
-}});
+}
+});

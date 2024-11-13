@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if(page3 !== null){
-        pontuationWrapper.style.width = "190px";
+        pontuationWrapper.style.width = "195px";
         pontuationWrapper.style.borderRadius = "30px";
     }
 
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         if(totalPerguntasRespondidas === 3){
-            pontuationWrapper.style.width = "190px";
+            pontuationWrapper.style.width = "195px";
             pontuationWrapper.style.borderRadius = "30px";
         }
     }

@@ -28,6 +28,28 @@
     }
 }
 
+@keyframes animationImage {
+    0%{
+        transform: rotateY(0deg);
+    }
+    
+    25%{
+        transform: rotateY(6deg);
+    }
+
+    50%{
+        transform: rotateY(12deg);
+    }
+
+    75%{
+        transform: rotateY(6deg);
+    }
+    
+    100%{
+        transform: rotateY(0deg);
+    }
+}
+
 
 *{
     margin: 0;
@@ -166,8 +188,11 @@ div.responses{
 
 div.response-single{
     width: 300px;
-    height: 70px;
-    margin-bottom: 20px;
+    height: 80px;
+    margin: 0px auto 20px auto;
+    position: relative;
+    left: 44%;
+    transform: translateX(-50%);
     border-radius: 7px;
     background: linear-gradient(to bottom, #dad5d598, #747171a8);
     border: 2px solid #d69d73;
@@ -200,9 +225,21 @@ div.response-single button{
     top: 0;
     left: 0;
     width: 100%;
-    height: 105vh;
+    height: 110vh;
     background-color: rgba(0, 0, 0, 0.8);
     z-index: 100;
+}
+
+.modal_guia .img-modal{
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    bottom: 20px;
+    left: 40px;
+    animation-name: animationImage;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
 }
 
 .modal_guia .initial{
@@ -210,41 +247,60 @@ div.response-single button{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 40px 20px;
+    padding: 40px 40px;
 }
 
 .modal_guia h3{
     font-size: 27px;
     font-weight: 400;
     color: #f5f5f5;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .modal_guia #btn_fechar_modal{
     background-color: transparent;
     border: 0;
     font-size: 27px;
-    color: #f5f5f5;
+    font-weight: bold;
+    color: #ff0000;
     cursor: pointer;
 }
 
 .modal_guia p{
     color: #f5f5f5;
-    padding: 20px;
-    text-align: justify;
+    padding: 20px 40px;
+    text-align: center;
 }
 
 .modal_guia #btn_confirmar_ajuda{
-    animation-name: animationBtnConfirm;
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in;
     width: 150px;
     cursor: pointer;
     outline: 0;
     border: 0;
-    border-radius: 5px;
+    border-radius: 10px;
     padding: 10px;
+    border:  2px solid #d69d73;
+    background-color: transparent;
+    color: #fff;
+    position: relative;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%,-50%);
+    transition: 0.2s ease-in;
 }
+
+.modal_guia #btn_confirmar_ajuda:hover{
+    border: 0;
+    background-color: #d69d73;
+    color: #fff; 
+}
+
+.modal_guia #btn_confirmar_ajuda:active{
+    top: 30.2%;
+}
+
 .overlay-background {
     position: fixed;
     top: 0;
@@ -284,6 +340,12 @@ div.response-single button{
         transform: translateX(-50%);
     }
 
+    div.response-single{
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
     div.response-single:nth-child(1),div.response-single:nth-child(3){
         margin-left: 0px;
     }
@@ -297,8 +359,24 @@ div.response-single button{
     }
 
     .modal_guia{
-        height: 125vh;
+        height: 127vh;
     }
+
+    .modal_guia #btn_confirmar_ajuda{
+        top: 7%;
+    }
+
+    .modal_guia #btn_confirmar_ajuda:active{
+        top: 7.2%;
+    }
+
+    .modal_guia .img-modal{
+        position: relative;
+        top: 80px;
+        left: 0;
+        margin: 0 auto;
+    }
+    
 }
 
 @media (width < 900px){
@@ -334,7 +412,7 @@ div.response-single button{
 
     div.response-single{
         width: 250px;
-        height: 50px;
+        height: 70px;
     }
     
     div.response-single button{
@@ -345,5 +423,29 @@ div.response-single button{
         right: 4%; 
         width: 70px;
         height: 70px;  
+    }
+}
+
+@media (width < 560px) {
+    .modal_guia{
+        height: 127vh;
+    }
+
+    .modal_guia .img-modal{
+        width: 300px;
+        height: 300px;
+    }
+
+    .modal_guia h3{
+        font-size: 24px;
+    }
+    
+    .modal_guia #btn_fechar_modal{
+        font-size: 24px;
+    }
+    
+    .modal_guia p{
+        padding: 10px !important;
+        font-size: 17px !important;
     }
 }

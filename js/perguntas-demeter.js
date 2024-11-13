@@ -370,10 +370,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //page 4
     if(page4 !== null){
-        const perguntasAcertadas = localStorage.getItem('perguntasAcertadasDemeter') ? parseInt(localStorage.getItem('perguntasAcertadasDemeter')) + 1 : 1;
+        const perguntasAcertadas = localStorage.getItem('perguntasAcertadasDemeter') ? parseInt(localStorage.getItem('perguntasAcertadasDemeter')) : 1;
         localStorage.setItem('perguntasAcertadasDemeter',perguntasAcertadas);
 
-        const questaoDemeter = localStorage.getItem('questaoAtualDemeter') ? parseInt(localStorage.getItem('questaoAtualDemeter')) + 1 : 1;
+        const questaoDemeter = localStorage.getItem('questaoAtualDemeter') ? parseInt(localStorage.getItem('questaoAtualDemeter')) : 1;
         localStorage.setItem('questaoAtualDemeter',questaoDemeter);
 
         localStorage.setItem('perguntasAcertadas',perguntasAcertadas);
@@ -383,7 +383,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const page4Btn3 = document.getElementById('res_3_questao_4_fase_demeter');
         const page4Btn4 = document.getElementById('res_4_questao_4_fase_demeter');
 
-        const totalPerguntasRespondidas = localStorage.getItem('totalPerguntasRespondidas') ? parseInt(localStorage.getItem('totalPerguntasRespondidas')) + 1 : 1;;
+        const totalPerguntasRespondidas = localStorage.getItem('totalPerguntasRespondidas') ? parseInt(localStorage.getItem('totalPerguntasRespondidas')) : 1;;
         localStorage.setItem('totalPerguntasRespondidas', totalPerguntasRespondidas);
 
         page4Btn1.addEventListener('click', () => {

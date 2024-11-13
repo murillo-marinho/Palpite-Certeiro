@@ -3,6 +3,12 @@ window.onload = function() {
     startTyping();
 };
 
+localStorage.setItem('icone_guia_escondido',false);
+localStorage.removeItem('limitePoderesTemisLocalStorage');
+localStorage.removeItem('limitePoderesAtenaLocalStorage');
+localStorage.removeItem('limitePoderesZeusLocalStorage');
+
+
 const dialogue = [
     "O Monte Olimpo é a morada dos principais deuses gregos, liderados por Zeus.","",
     "Situado nas montanhas da Grécia, era visto como sagrado e inacessível aos mortais. Lá os deuses reuniam-se para decidir o destinos dos humanos e do cosmos","",

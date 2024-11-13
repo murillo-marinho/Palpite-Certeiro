@@ -1,6 +1,8 @@
 var perguntasAcertadasDemeter = localStorage.getItem('perguntasAcertadasDemeter') ? parseInt(localStorage.getItem('perguntasAcertadasDemeter')) : 0;
 var perguntasAcertadasPoseidon = localStorage.getItem('perguntasAcertadasPoseidon') ? parseInt(localStorage.getItem('perguntasAcertadasPoseidon')) : 0;
-var perguntasAcertadas = perguntasAcertadasDemeter + perguntasAcertadasPoseidon;
+var perguntasAcertadasSubmundo = localStorage.getItem('perguntasAcertadasSubmundo') ? parseInt(localStorage.getItem('perguntasAcertadasSubmundo')) : 0;
+var perguntasAcertadasMonteOlimpo = localStorage.getItem('perguntasAcertadasMonteOlimpo') ? parseInt(localStorage.getItem('perguntasAcertadasMonteOlimpo')) : 0;
+var perguntasAcertadas = perguntasAcertadasDemeter + perguntasAcertadasPoseidon + perguntasAcertadasSubmundo + perguntasAcertadasMonteOlimpo;
 
 if(perguntasAcertadas >= 3){
     const circleOne = document.getElementById('circle-1');
@@ -95,7 +97,7 @@ function fadeOutAndRedirect(url) {
         console.log(perguntasAcertadas);
         alert("Você precisa responder a pelo menos 6 perguntas para acessar esta página.");
         canRedirect = false; 
-    } else if (url === ".html" && perguntasAcertadas < 9) {
+    } else if (url === "reino-olimpo.html" && perguntasAcertadas < 9) {
         console.log(perguntasAcertadas);
         alert("Você precisa responder a pelo menos 9 perguntas para acessar esta página."); 
         canRedirect = false; 

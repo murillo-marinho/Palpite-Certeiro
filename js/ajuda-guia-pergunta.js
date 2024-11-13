@@ -158,17 +158,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function verificarLimiteAtena(){
         const verificacaoLimiteAtena = (limitePoderesAtenaPorFase - limitePoderesAtenaLocalStorage) <= 0;
-        console.log("Limite dentro da verificacao="+limitePoderesAtenaPorFase);
-        console.log("local storage dentro da verficacao="+limitePoderesAtenaLocalStorage);
-        console.log((limitePoderesAtenaPorFase - limitePoderesAtenaLocalStorage) <= 0);
+        //console.log("Limite dentro da verificacao="+limitePoderesAtenaPorFase);
+        //console.log("local storage dentro da verficacao="+limitePoderesAtenaLocalStorage);
+        //console.log((limitePoderesAtenaPorFase - limitePoderesAtenaLocalStorage) <= 0);
         if(verificacaoLimiteAtena){
             btnAjudaGuia.style.opacity = "0";
-            pontuation.style.top = "90px";
+            pontuation.style.top = "130px";
             localStorage.setItem('icone_guia_escondido',true);
         }else{
-            console.log("vim pra cá");
             btnAjudaGuia.style.opacity = "1";
-            pontuation.style.top = "150px";
+            pontuation.style.top = "130px";
         }
     }
 
@@ -228,16 +227,16 @@ document.addEventListener('DOMContentLoaded', () => {
     
     function verificarLimiteTemis(){
         const verificacaoLimiteTemis = (limitePoderesTemisPorFase - limitePoderesTemisLocalStorage) <= 0;
-         console.log("Limite dentro da verificacao="+limitePoderesTemisPorFase);
-         console.log("local storage dentro da verficacao="+limitePoderesTemisLocalStorage);
-         console.log(verificacaoLimiteTemis);
+         //console.log("Limite dentro da verificacao="+limitePoderesTemisPorFase);
+        // console.log("local storage dentro da verficacao="+limitePoderesTemisLocalStorage);
+         //console.log(verificacaoLimiteTemis);
         if(verificacaoLimiteTemis){
             btnAjudaGuia.style.opacity = "0";
-            pontuation.style.top = "90px";
+            pontuation.style.top = "130px";
             localStorage.setItem('icone_guia_escondido',true);
         }else{
             btnAjudaGuia.style.opacity = "1";
-            pontuation.style.top = "150px";
+            pontuation.style.top = "130px";
         }
     }
 
@@ -245,12 +244,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const verificacaoLimiteZeus = (limitePoderesZeusPorFase - limitePoderesZeusLocalStorage) <= 0;
         if(verificacaoLimiteZeus){
             btnAjudaGuia.style.opacity = "0";
-            pontuation.style.top = "90px";
+            pontuation.style.top = "130px";
             localStorage.setItem('icone_guia_escondido',true);
         }
         else{
             btnAjudaGuia.style.opacity = "1";
-            pontuation.style.top = "150px";
+            pontuation.style.top = "130px";
         }
     }
 
@@ -316,7 +315,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             
         }else if(meuGuia === "Zeus"){
-            poderes.innerHTML = "Permite que você pule a pergunta (limite de 1 vez por fase).";
+            poderes.innerHTML = "Permite que você troque a pergunta (limite de 1 vez por fase).";
             poderes.style.fontSize = "20px";
     
             if(faseAtual === "Demeter"){
@@ -441,6 +440,30 @@ document.addEventListener('DOMContentLoaded', () => {
     /**evento ajuda guia */
     btnAjudaGuia.addEventListener('click', () => {
         modalGuia.style.display = "flex";
+        const imagemGuiaModal = document.getElementById('modal-guia');
+        var imagem = document.createElement('img');
+        imagem.classList.add('img-modal');
+
+        if(meuGuia === "Têmis"){
+            imagem.src = "/img/themis-modal.png";
+            imagemGuiaModal.appendChild(imagem);
+
+            if()
+        }
+
+        if(meuGuia === "Zeus"){
+            imagem.src = "/img/zeus-modal.png";
+            imagemGuiaModal.appendChild(imagem); 
+
+            verificarLimiteZeus();
+        }
+
+        if(meuGuia === "Atena"){
+            imagem.src = "/img/atena-modal.png";
+            imagemGuiaModal.appendChild(imagem); 
+
+            verificarLimiteAtena();
+        }
     }); 
 
     //**Evennto fechar modal */
@@ -557,40 +580,40 @@ document.addEventListener('DOMContentLoaded', () => {
                 /**Mudar para perguntas do submundo */
                 if(parseInt(questaoAtualSubmundo) === 1){
                     fecharModal();
-                    const dica = "111111111111111111";  
+                    const dica = "Pense nas duas condições: a moeda representa a passagem, e a ausência de uma maldição permite a travessia segura. Ambas são necessárias para cruzar o rio.";  
                     mudarPerguntaParaDica.textContent = dica;
 
                     limitePoderesAtenaLocalStorage = limitePoderesAtenaLocalStorage + 1;
                     localStorage.setItem('limitePoderesAtenaLocalStorage',limitePoderesAtenaLocalStorage);
 
                     setTimeout(() => {
-                        mudarPerguntaParaDica.textContent = "Deméter é a deusa da agricultura e das colheitas. Suponha que estamos no reino dela, onde só há colheita se não for inverno e houver sol. Considerando essa regra, em qual das opções abaixo a colheita vai acontecer?";
+                        mudarPerguntaParaDica.textContent = "No reino de Hades, as almas só podem atravessar o rio Estige se tiverem uma moeda e se não forem amaldiçoadas.Considerando essa regra, em qual das opções abaixo uma alma pode atravessar o rio Estige?";
                     }, 10000);
                 }
     
                 if(parseInt(questaoAtualSubmundo) === 2){
                     fecharModal();
-                    const dica = "111111111111111111";  
+                    const dica = "Lembre-se que Cérbero é um guardião fiel ao seu mestre Hades, e ele permite a passagem apenas quando a alma não apresenta resistência nem ameaça. Ou seja, terá uma negação em apenas uma das condicionais.";  
                     mudarPerguntaParaDica.textContent = dica;
 
                     limitePoderesAtenaLocalStorage = limitePoderesAtenaLocalStorage + 1;
                     localStorage.setItem('limitePoderesAtenaLocalStorage',limitePoderesAtenaLocalStorage);
 
                     setTimeout(() => {
-                        mudarPerguntaParaDica.textContent = "Deméter é a deusa da agricultura e das colheitas. Suponha que estamos no reino dela, onde só há colheita se não for inverno e houver sol. Considerando essa regra, em qual das opções abaixo a colheita vai acontecer?";
+                        mudarPerguntaParaDica.textContent = "No reino de Hades, o cão Cérbero permite a passagem para as almas apenas se elas não carregarem nenhum objeto e tiverem permissão do próprio Hades. Em qual das opções abaixo uma alma consegue passar por Cérbero?";
                     }, 10000);
                 }
     
                 if(parseInt(questaoAtualSubmundo) === 3){
                     fecharModal();
-                    const dica = "111111111111111111";  
+                    const dica = "A floresta encanta-se com a combinação de escuridão e algo que brilha intensamente no céu. Pense no momento em que tudo parece mágico.";  
                     mudarPerguntaParaDica.textContent = dica;
 
                     limitePoderesAtenaLocalStorage = limitePoderesAtenaLocalStorage + 1;
                     localStorage.setItem('limitePoderesAtenaLocalStorage',limitePoderesAtenaLocalStorage);
 
                     setTimeout(() => {
-                        mudarPerguntaParaDica.textContent = "Deméter é a deusa da agricultura e das colheitas. Suponha que estamos no reino dela, onde só há colheita se não for inverno e houver sol. Considerando essa regra, em qual das opções abaixo a colheita vai acontecer?";
+                        mudarPerguntaParaDica.textContent = "No submundo, há uma floresta encantada onde as árvores só florescem se estiver anoitecendo e houver uma lua cheia. Em qual das opções abaixo as árvores irão florescer?";
                     }, 10000);
                 }
             }
@@ -720,8 +743,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 fecharModal();
 
                 if(parseInt(questaoAtualDemeter) === 1){
-                    singleResposta1Questao1FaseDemeter.style.opacity = 0;
-                    singleResposta3Questao1FaseDemeter.style.opacity = 0;
+                    singleResposta1Questao1FaseDemeter.style.display = "none";
+                    singleResposta3Questao1FaseDemeter.style.display = "none";
 
                     limitePoderesTemisLocalStorage = limitePoderesTemisLocalStorage + 1;
                     localStorage.setItem('limitePoderesTemisLocalStorage',limitePoderesTemisLocalStorage);
@@ -730,8 +753,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
     
                 if(parseInt(questaoAtualDemeter) === 2){
-                    singleResposta2Questao2FaseDemeter.style.opacity = 0;
-                    singleResposta4Questao2FaseDemeter.style.opacity = 0;
+                    singleResposta2Questao2FaseDemeter.style.display = "none";
+                    singleResposta4Questao2FaseDemeter.style.display = "none";
 
                     limitePoderesTemisLocalStorage = limitePoderesTemisLocalStorage + 1;
                     localStorage.setItem('limitePoderesTemisLocalStorage',limitePoderesTemisLocalStorage);
@@ -740,8 +763,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
     
                 if(parseInt(questaoAtualDemeter) === 3){
-                    singleResposta3Questao3FaseDemeter.style.opacity = 0;
-                    singleResposta2Questao3FaseDemeter.style.opacity = 0;
+                    singleResposta3Questao3FaseDemeter.style.display = "none";
+                    singleResposta2Questao3FaseDemeter.style.display = "none";
 
                     limitePoderesTemisLocalStorage = limitePoderesTemisLocalStorage + 1;
                     localStorage.setItem('limitePoderesTemisLocalStorage',limitePoderesTemisLocalStorage);
@@ -757,8 +780,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 fecharModal();
 
                 if(parseInt(questaoAtualPoseidon) === 1){
-                    singleResposta1Questao1FasePoseidon.style.opacity = 0;
-                    singleResposta4Questao1FasePoseidon.style.opacity = 0;
+                    singleResposta1Questao1FasePoseidon.style.display = "none";
+                    singleResposta4Questao1FasePoseidon.style.display = "none";
 
                     limitePoderesTemisLocalStorage = limitePoderesTemisLocalStorage + 1;
                     localStorage.setItem('limitePoderesTemisLocalStorage',limitePoderesTemisLocalStorage);
@@ -767,8 +790,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
     
                 if(parseInt(questaoAtualPoseidon) === 2){
-                    singleResposta2Questao2FasePoseidon.style.opacity = 0;
-                    singleResposta3Questao2FasePoseidon.style.opacity = 0;
+                    singleResposta2Questao2FasePoseidon.style.display = "none";
+                    singleResposta3Questao2FasePoseidon.style.display = "none";
 
                     limitePoderesTemisLocalStorage = limitePoderesTemisLocalStorage + 1;
                     localStorage.setItem('limitePoderesTemisLocalStorage',limitePoderesTemisLocalStorage);
@@ -778,8 +801,8 @@ document.addEventListener('DOMContentLoaded', () => {
     
                 if(parseInt(questaoAtualPoseidon) === 3){
                     verificarLimiteTemis();
-                    singleResposta4Questao3FasePoseidon.style.opacity = 0;
-                    singleResposta2Questao3FasePoseidon.style.opacity = 0;
+                    singleResposta4Questao3FasePoseidon.style.display = "none";
+                    singleResposta2Questao3FasePoseidon.style.display = "none";
 
                     limitePoderesTemisLocalStorage = limitePoderesTemisLocalStorage + 1;
                     localStorage.setItem('limitePoderesTemisLocalStorage',limitePoderesTemisLocalStorage);
@@ -792,8 +815,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 fecharModal();
 
                 if(parseInt(questaoAtualSubmundo) === 1){
-                    singleResposta1Questao1FaseSubmundo.style.opacity = 0;
-                    singleResposta2Questao1FaseSubmundo.style.opacity = 0;
+                    singleResposta1Questao1FaseSubmundo.display = "none";
+                    singleResposta2Questao1FaseSubmundo.display = "none";
 
                     limitePoderesTemisLocalStorage = limitePoderesTemisLocalStorage + 1;
                     localStorage.setItem('limitePoderesTemisLocalStorage',limitePoderesTemisLocalStorage);
@@ -802,8 +825,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
     
                 if(parseInt(questaoAtualSubmundo) === 2){
-                    singleResposta2Questao2FaseSubmundo.style.opacity = 0;
-                    singleResposta4Questao2FaseSubmundo.style.opacity = 0;
+                    singleResposta2Questao2FaseSubmundo.style.display = "none";
+                    singleResposta4Questao2FaseSubmundo.style.display = "none";
 
                     limitePoderesTemisLocalStorage = limitePoderesTemisLocalStorage + 1;
                     localStorage.setItem('limitePoderesTemisLocalStorage',limitePoderesTemisLocalStorage);
@@ -812,8 +835,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
     
                 if(parseInt(questaoAtualSubmundo) === 3){
-                    singleResposta4Questao3FaseSubmundo.style.opacity = 0;
-                    singleResposta2Questao3FaseSubmundo.style.opacity = 0;
+                    singleResposta4Questao3FaseSubmundo.style.display = "none";
+                    singleResposta3Questao3FaseSubmundo.style.display = "none";
 
                     limitePoderesTemisLocalStorage = limitePoderesTemisLocalStorage + 1;
                     localStorage.setItem('limitePoderesTemisLocalStorage',limitePoderesTemisLocalStorage);
@@ -824,8 +847,8 @@ document.addEventListener('DOMContentLoaded', () => {
     
             if(faseAtual === "Monte Olimpo"){
                 if(parseInt(questaoAtualMonteOlimpo) === 1){
-                    singleResposta1Questao1FaseDemeter.style.opacity = 0;
-                    singleResposta2Questao1FaseDemeter.style.opacity = 0;
+                    singleResposta1Questao1FaseMonteOlimpo.style.display = "none";
+                    singleResposta2Questao1FaseMonteOlimpo.style.display = "none";
 
                     limitePoderesTemisLocalStorage = limitePoderesTemisLocalStorage + 1;
                     localStorage.setItem('limitePoderesTemisLocalStorage',limitePoderesTemisLocalStorage);
@@ -834,8 +857,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
     
                 if(parseInt(questaoAtualMonteOlimpo) === 2){
-                    singleResposta1Questao2FaseDemeter.style.opacity = 0;
-                    singleResposta3Questao2FaseDemeter.style.opacity = 0;
+                    singleResposta1Questao2FaseMonteOlimpo.style.display = "none";
+                    singleResposta3Questao2FaseMonteOlimpo.style.display = "none";
 
                     limitePoderesTemisLocalStorage = limitePoderesTemisLocalStorage + 1;
                     localStorage.setItem('limitePoderesTemisLocalStorage',limitePoderesTemisLocalStorage);
@@ -844,8 +867,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
     
                 if(parseInt(questaoAtualMonteOlimpo) === 3){
-                    singleResposta2Questao3FaseDemeter.style.opacity = 0;
-                    singleResposta3Questao3FaseDemeter.style.opacity = 0;
+                    singleResposta2Questao3FaseMonteOlimpo.style.display = "none";
+                    singleResposta3Questao3FaseMonteOlimpo.style.display = "none";
 
                     limitePoderesTemisLocalStorage = limitePoderesTemisLocalStorage + 1;
                     localStorage.setItem('limitePoderesTemisLocalStorage',limitePoderesTemisLocalStorage);

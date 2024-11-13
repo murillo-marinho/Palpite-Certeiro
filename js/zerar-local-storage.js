@@ -13,4 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.removeItem('totalPerguntasRespondidas');
     localStorage.removeItem('playerName');
     localStorage.removeItem('icone_guia_escondido');
+    localStorage.removeItem('perguntasAcertadasMonteOlimpo');
+    localStorage.removeItem('perguntasAcertadasSubmundo');
+    localStorage.removeItem('questaoAtualMonteOlimpo');
+    localStorage.removeItem('questaoAtualSubmundo');
 });

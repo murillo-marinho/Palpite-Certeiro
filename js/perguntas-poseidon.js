@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const page2 = document.getElementById('page2');
     const page3 = document.getElementById('page3');
     const page4 = document.getElementById('page4');
+    console.log(page4);
+    console.log(page4 !== null);
     let points = localStorage.getItem('points') ? parseInt(localStorage.getItem('points')) : 0;
     
     let pointsAdd = 0;
@@ -368,161 +370,164 @@ document.addEventListener('DOMContentLoaded', () => {
                 window.location.href = "fases.html"; 
             }, 3000);
         });
+    }
 
-        //page 4 POSEIDON
-        if(page4 !== null){
-            const perguntasAcertadas = localStorage.getItem('perguntasAcertadasPoseidon') ? parseInt(localStorage.getItem('perguntasAcertadasPoseidon')) : 1;
-            localStorage.setItem('perguntasAcertadasPoseidon',perguntasAcertadas);
+    //page 4 POSEIDON
+    if(page4 !== null){
+        console.log("To na page 4");
+        const perguntasAcertadas = localStorage.getItem('perguntasAcertadasPoseidon') ? parseInt(localStorage.getItem('perguntasAcertadasPoseidon')) : 1;
+        localStorage.setItem('perguntasAcertadasPoseidon',perguntasAcertadas);
 
-            const questaoPoseidon = localStorage.getItem('questaoAtualPoseidon') ? parseInt(localStorage.getItem('questaoAtualPoseidon')) : 1;
-            localStorage.setItem('questaoAtualPoseidon',questaoPoseidon);
+        const questaoPoseidon = localStorage.getItem('questaoAtualPoseidon') ? parseInt(localStorage.getItem('questaoAtualPoseidon')) : 1;
+        localStorage.setItem('questaoAtualPoseidon',questaoPoseidon);
 
-            localStorage.setItem('perguntasAcertadas',perguntasAcertadas);
+        localStorage.setItem('perguntasAcertadas',perguntasAcertadas);
 
-            const page4Btn1 = document.getElementById('res_1_questao_4_fase_poseidon');
-            const page4Btn2 = document.getElementById('res_2_questao_4_fase_poseidon');
-            const page4Btn3 = document.getElementById('res_3_questao_4_fase_poseidon');
-            const page4Btn4 = document.getElementById('res_4_questao_4_fase_poseidon');
+        const page4Btn1 = document.getElementById('res_1_questao_4_fase_poseidon');
+        const page4Btn2 = document.getElementById('res_2_questao_4_fase_poseidon');
+        const page4Btn3 = document.getElementById('res_3_questao_4_fase_poseidon');
+        const page4Btn4 = document.getElementById('res_4_questao_4_fase_poseidon');
 
-            const totalPerguntasRespondidas = localStorage.getItem('totalPerguntasRespondidas') ? parseInt(localStorage.getItem('totalPerguntasRespondidas')) + 1 : 1;;
-            localStorage.setItem('totalPerguntasRespondidas', totalPerguntasRespondidas);
+        const totalPerguntasRespondidas = localStorage.getItem('totalPerguntasRespondidas') ? parseInt(localStorage.getItem('totalPerguntasRespondidas')) : 1;
+        localStorage.setItem('totalPerguntasRespondidas', totalPerguntasRespondidas);
 
-            page4Btn1.addEventListener('click', () => {
-                page4Btn1.value = "Resposta 1 ✔";
-                page4Btn2.value = "Resposta 2 ❌";
-                page4Btn3.value = "Resposta 3 ❌";
-                page4Btn4.value = "Resposta 4 ❌";
+        page4Btn1.addEventListener('click', () => {
+            page4Btn1.value = "Resposta 1 ✔";
+            page4Btn2.value = "Resposta 2 ❌";
+            page4Btn3.value = "Resposta 3 ❌";
+            page4Btn4.value = "Resposta 4 ❌";
 
-                page4Btn1.style.border = "3px solid #00ff00";
-                page4Btn1.style.borderRadius = "5px";
-                page4Btn2.style.border = "3px solid #ff0000";
-                page4Btn2.style.borderRadius = "5px";
-                page4Btn3.style.border = "3px solid #ff0000";
-                page4Btn3.style.borderRadius = "5px";
-                page4Btn4.style.border = "3px solid #ff0000";
-                page4Btn4.style.borderRadius = "5px";
+            page4Btn1.style.border = "3px solid #00ff00";
+            page4Btn1.style.borderRadius = "5px";
+            page4Btn2.style.border = "3px solid #ff0000";
+            page4Btn2.style.borderRadius = "5px";
+            page4Btn3.style.border = "3px solid #ff0000";
+            page4Btn3.style.borderRadius = "5px";
+            page4Btn4.style.border = "3px solid #ff0000";
+            page4Btn4.style.borderRadius = "5px";
 
-                pointsAdd = 10;
-                points = points + pointsAdd;
-                localStorage.setItem('points', points);
+            pointsAdd = 10;
+            points = points + pointsAdd;
+            localStorage.setItem('points', points);
 
-                setTimeout(() => {
-                    if(parseInt(localStorage.getItem('totalPerguntasRespondidas')) === 1){
-                        window.location.href = "fase-demeter-2.html";    
-                    }
+            console.log(localStorage.getItem('totalPerguntasRespondidas') === 3);
 
-                    if(parseInt(localStorage.getItem('totalPerguntasRespondidas')) === 2){
-                        window.location.href = "fase-demeter-3.html";    
-                    }
+            setTimeout(() => {
+                if(parseInt(localStorage.getItem('totalPerguntasRespondidas')) === 1){
+                    window.location.href = "fase-poseidon-2.html";    
+                }
 
-                    if(parseInt(localStorage.getItem('totalPerguntasRespondidas')) === 3){
-                        window.location.href = "fases.html"; 
-                    }
-                }, 3000);
-            });
+                if(parseInt(localStorage.getItem('totalPerguntasRespondidas')) === 2){
+                    window.location.href = "fase-poseidon-3.html";    
+                }
 
-            page4Btn2.addEventListener('click', () => {
-                page4Btn1.value = "Resposta 1 ✔";
-                page4Btn2.value = "Resposta 2 ❌";
-                page4Btn3.value = "Resposta 3 ❌";
-                page4Btn4.value = "Resposta 4 ❌";
+                if(parseInt(localStorage.getItem('totalPerguntasRespondidas')) === 3){
+                    window.location.href = "fases.html"; 
+                }
+            }, 3000);
+        });
 
-                page4Btn1.style.border = "3px solid #00ff00";
-                page4Btn1.style.borderRadius = "5px";
-                page4Btn2.style.border = "3px solid #ff0000";
-                page4Btn2.style.borderRadius = "5px";
-                page4Btn3.style.border = "3px solid #ff0000";
-                page4Btn3.style.borderRadius = "5px";
-                page4Btn4.style.border = "3px solid #ff0000";
-                page4Btn4.style.borderRadius = "5px";
+        page4Btn2.addEventListener('click', () => {
+            page4Btn1.value = "Resposta 1 ✔";
+            page4Btn2.value = "Resposta 2 ❌";
+            page4Btn3.value = "Resposta 3 ❌";
+            page4Btn4.value = "Resposta 4 ❌";
 
-                pointsAdd = 0;
-                points = points + pointsAdd;
-                localStorage.setItem('points', points);
+            page4Btn1.style.border = "3px solid #00ff00";
+            page4Btn1.style.borderRadius = "5px";
+            page4Btn2.style.border = "3px solid #ff0000";
+            page4Btn2.style.borderRadius = "5px";
+            page4Btn3.style.border = "3px solid #ff0000";
+            page4Btn3.style.borderRadius = "5px";
+            page4Btn4.style.border = "3px solid #ff0000";
+            page4Btn4.style.borderRadius = "5px";
 
-                setTimeout(() => {
-                    if(parseInt(localStorage.getItem('totalPerguntasRespondidas')) === 1){
-                        window.location.href = "fase-demeter-2.html";    
-                    }
+            pointsAdd = 0;
+            points = points + pointsAdd;
+            localStorage.setItem('points', points);
 
-                    if(parseInt(localStorage.getItem('totalPerguntasRespondidas')) === 2){
-                        window.location.href = "fase-demeter-3.html";    
-                    }
+            setTimeout(() => {
+                if(parseInt(localStorage.getItem('totalPerguntasRespondidas')) === 1){
+                    window.location.href = "fase-poseidon-2.html";    
+                }
 
-                    if(parseInt(localStorage.getItem('totalPerguntasRespondidas')) === 3){
-                        window.location.href = "fases.html";    
-                    }
-                }, 3000);
-            });
+                if(parseInt(localStorage.getItem('totalPerguntasRespondidas')) === 2){
+                    window.location.href = "fase-poseidon-3.html";    
+                }
 
-            page4Btn3.addEventListener('click', () => {
-                page4Btn1.value = "Resposta 1 ✔";
-                page4Btn2.value = "Resposta 2 ❌";
-                page4Btn3.value = "Resposta 3 ❌";
-                page4Btn4.value = "Resposta 4 ❌";
+                if(parseInt(localStorage.getItem('totalPerguntasRespondidas')) === 3){
+                    window.location.href = "fases.html";    
+                }
+            }, 3000);
+        });
 
-                page4Btn1.style.border = "3px solid #00ff00";
-                page4Btn1.style.borderRadius = "5px";
-                page4Btn2.style.border = "3px solid #ff0000";
-                page4Btn2.style.borderRadius = "5px";
-                page4Btn3.style.border = "3px solid #ff0000";
-                page4Btn3.style.borderRadius = "5px";
-                page4Btn4.style.border = "3px solid #ff0000";
-                page4Btn4.style.borderRadius = "5px";
+        page4Btn3.addEventListener('click', () => {
+            page4Btn1.value = "Resposta 1 ✔";
+            page4Btn2.value = "Resposta 2 ❌";
+            page4Btn3.value = "Resposta 3 ❌";
+            page4Btn4.value = "Resposta 4 ❌";
 
-                pointsAdd = 0;
-                points = points + pointsAdd;
-                localStorage.setItem('points', points);
+            page4Btn1.style.border = "3px solid #00ff00";
+            page4Btn1.style.borderRadius = "5px";
+            page4Btn2.style.border = "3px solid #ff0000";
+            page4Btn2.style.borderRadius = "5px";
+            page4Btn3.style.border = "3px solid #ff0000";
+            page4Btn3.style.borderRadius = "5px";
+            page4Btn4.style.border = "3px solid #ff0000";
+            page4Btn4.style.borderRadius = "5px";
 
-                setTimeout(() => {
-                    if(parseInt(localStorage.getItem('totalPerguntasRespondidas')) === 1){
-                        window.location.href = "fase-demeter-2.html";    
-                    }
+            pointsAdd = 0;
+            points = points + pointsAdd;
+            localStorage.setItem('points', points);
 
-                    if(parseInt(localStorage.getItem('totalPerguntasRespondidas')) === 2){
-                        window.location.href = "fase-demeter-3.html";    
-                    }
+            setTimeout(() => {
+                if(parseInt(localStorage.getItem('totalPerguntasRespondidas')) === 1){
+                    window.location.href = "fase-poseidon-2.html";    
+                }
 
-                    if(parseInt(localStorage.getItem('totalPerguntasRespondidas')) === 3){
-                        window.location.href = "fases.html";    
-                    }
-                }, 3000);
-            });
+                if(parseInt(localStorage.getItem('totalPerguntasRespondidas')) === 2){
+                    window.location.href = "fase-poseidon-3.html";    
+                }
 
-            page4Btn4.addEventListener('click', () => {
-                page4Btn1.value = "Resposta 1 ✔";
-                page4Btn2.value = "Resposta 2 ❌";
-                page4Btn3.value = "Resposta 3 ❌";
-                page4Btn4.value = "Resposta 4 ❌";
+                if(parseInt(localStorage.getItem('totalPerguntasRespondidas')) === 3){
+                    window.location.href = "fases.html";    
+                }
+            }, 3000);
+        });
 
-                page4Btn1.style.border = "3px solid #00ff00";
-                page4Btn1.style.borderRadius = "5px";
-                page4Btn2.style.border = "3px solid #ff0000";
-                page4Btn2.style.borderRadius = "5px";
-                page4Btn3.style.border = "3px solid #ff0000";
-                page4Btn3.style.borderRadius = "5px";
-                page4Btn4.style.border = "3px solid #ff0000";
-                page4Btn4.style.borderRadius = "5px";
+        page4Btn4.addEventListener('click', () => {
+            page4Btn1.value = "Resposta 1 ✔";
+            page4Btn2.value = "Resposta 2 ❌";
+            page4Btn3.value = "Resposta 3 ❌";
+            page4Btn4.value = "Resposta 4 ❌";
 
-                pointsAdd = 0;
-                points = points + pointsAdd;
-                localStorage.setItem('points', points);
+            page4Btn1.style.border = "3px solid #00ff00";
+            page4Btn1.style.borderRadius = "5px";
+            page4Btn2.style.border = "3px solid #ff0000";
+            page4Btn2.style.borderRadius = "5px";
+            page4Btn3.style.border = "3px solid #ff0000";
+            page4Btn3.style.borderRadius = "5px";
+            page4Btn4.style.border = "3px solid #ff0000";
+            page4Btn4.style.borderRadius = "5px";
 
-                setTimeout(() => {
-                    if(parseInt(localStorage.getItem('totalPerguntasRespondidas')) === 1){
-                        window.location.href = "fase-demeter-2.html";    
-                    }
+            pointsAdd = 0;
+            points = points + pointsAdd;
+            localStorage.setItem('points', points);
 
-                    if(parseInt(localStorage.getItem('totalPerguntasRespondidas')) === 2){
-                        window.location.href = "fase-demeter-3.html";    
-                    }
+            setTimeout(() => {
+                if(parseInt(localStorage.getItem('totalPerguntasRespondidas')) === 1){
+                    window.location.href = "fase-poseidon-2.html";    
+                }
 
-                    if(parseInt(localStorage.getItem('totalPerguntasRespondidas')) === 3){
-                        window.location.href = "fases.html";  
-                    }
-                }, 3000);
-            });
-        }
+                if(parseInt(localStorage.getItem('totalPerguntasRespondidas')) === 2){
+                    window.location.href = "fase-poseidon-3.html";    
+                }
+
+                if(parseInt(localStorage.getItem('totalPerguntasRespondidas')) === 3){
+                    window.location.href = "fases.html";  
+                }
+            }, 3000);
+        });
     }
 });
 
