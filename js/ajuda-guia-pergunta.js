@@ -447,8 +447,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if(meuGuia === "Têmis"){
             imagem.src = "/img/themis-modal.png";
             imagemGuiaModal.appendChild(imagem);
-
-            if()
         }
 
         if(meuGuia === "Zeus"){
