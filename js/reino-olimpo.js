@@ -1,21 +1,12 @@
-function redirect() {
-    document.body.style.transition = 'opacity 2s';
-    document.body.style.opacity = '0';
-
-    setTimeout(() => {
-        window.location.href = 'Fases.html';
-    }, 2000);
-}
-
 window.onload = function() {
     document.body.style.opacity = '1';
     startTyping();
 };
 
 const dialogue = [
-    "Eu sou Poseidon, o deus dos mares.","",
-    "Meu reino, repleto de vida e abundância, está ameaçado por forças sombrias que desejam destruir o que construímos.","",
-    "Preciso da sua ajuda para a realização de um desafio crucial que determinará o destino do meu reino."
+    "O Monte Olimpo é a morada dos principais deuses gregos, liderados por Zeus.","",
+    "Situado nas montanhas da Grécia, era visto como sagrado e inacessível aos mortais. Lá os deuses reuniam-se para decidir o destinos dos humanos e do cosmos","",
+    "Pronto para testar o seu conhecimento? Avance para as questões que vão lhe testar!"
 ];
 
 let textPosition = 0;
@@ -54,6 +45,6 @@ function redirect() {
     document.body.style.opacity = '0';
 
     setTimeout(() => {
-        window.location.href = 'Fases.html';
+        window.location.href = 'fase-olimpo-1.html';
     }, 2000);
 }

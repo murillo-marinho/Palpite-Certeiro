@@ -21,15 +21,15 @@
             <img src="img/Guia.png" alt="Escolha seu guia" class="caixa">
             <div class="options">
                 <div class="option">
-                    <img src="img/Temis.png" alt="Imagem de Têmis, deusa da justiça" class="imge" onclick="fadeOutAndRedirect('guiaTemis.html')">
+                    <img src="img/Temis.png" alt="Imagem de Têmis, deusa da justiça" class="imge" id="guia-temis" onclick="fadeOutAndRedirect('guiaTemis.html')">
                     <div class="circle" onclick="openModal('temisModal')">!</div>
                 </div>
                 <div class="option">
-                    <img src="img/zeus.png" alt="Imagem de Zeus, deus do céu" class="imge" onclick="fadeOutAndRedirect('guiazeus.html')">
+                    <img src="img/zeus.png" alt="Imagem de Zeus, deus do céu" class="imge" id="guia-zeus" onclick="fadeOutAndRedirect('guiazeus.html')">
                     <div class="circle" onclick="openModal('zeusModal')">!</div>
                 </div>
                 <div class="option">
-                    <img src="img/atena.png" alt="Imagem de Atena, deusa da sabedoria" class="imge"onclick="fadeOutAndRedirect('guiaatena.html')">
+                    <img src="img/atena.png" alt="Imagem de Atena, deusa da sabedoria" class="imge" id="guia-atena" onclick="fadeOutAndRedirect('guiaatena.html')">
                     <div class="circle" onclick="openModal('atenaModal')">!</div>
                 </div>
             </div>
@@ -53,7 +53,7 @@
                     <h2>Zeus</h2>
                     <p>Zeus é o deus do céu e governante dos deuses do Olimpo. Ele é conhecido por seu poder e sua sabedoria.
                         <br><br>
-                        Durante a jornada, quando você solicitar a ajuda do guia, ele te ajudará permitindo que você pule a pergunta (limite de 1 vez por fase).
+                        Durante a jornada, quando você solicitar a ajuda do guia, ele te ajudará permitindo que você troque a pergunta (limite de 1 vez por fase).
                     </p>
                 </div>
             </div>
@@ -71,6 +71,7 @@
             </div>
         </div>
     </div>
-    <script src="js/script.js"></script> 
+    <script src="js/script.js" defer></script> 
+    <script src="js/guia.js" defer></script> 
 </body>
 </html>

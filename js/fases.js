@@ -1,11 +1,21 @@
-var totalPerguntasRespondidas = parseInt(localStorage.getItem('totalPerguntasRespondidas'));
+var perguntasAcertadasDemeter = localStorage.getItem('perguntasAcertadasDemeter') ? parseInt(localStorage.getItem('perguntasAcertadasDemeter')) : 0;
+var perguntasAcertadasPoseidon = localStorage.getItem('perguntasAcertadasPoseidon') ? parseInt(localStorage.getItem('perguntasAcertadasPoseidon')) : 0;
+var perguntasAcertadas = perguntasAcertadasDemeter + perguntasAcertadasPoseidon;
 
-if(totalPerguntasRespondidas === 3){
+if(perguntasAcertadas >= 3){
     const circleOne = document.getElementById('circle-1');
     circleOne.style.display = "none";
 }
 
+if(perguntasAcertadas >= 6){
+    const circleOne = document.getElementById('circle-2');
+    circleOne.style.display = "none";
+}
 
+if(perguntasAcertadas >= 9){
+    const circleOne = document.getElementById('circle-3');
+    circleOne.style.display = "none";
+}
 
 function navigateToPhase(phase) {
 
@@ -75,19 +85,24 @@ function fadeOutAndRedirect(url) {
     overlay.style.opacity = '0';
 
     var canRedirect = true;
+    console.log(perguntasAcertadas);
      
-    if (url === "reino-poseidon.html" && totalPerguntasRespondidas < 3) { 
+    if (url === "reino-poseidon.html" && perguntasAcertadas < 3) { 
+        console.log(perguntasAcertadas);
         alert("Você precisa responder a pelo menos 3 perguntas para acessar esta página.");
         canRedirect = false; 
-    } else if (url === "reino-submundo.html" && totalPerguntasRespondidas < 6) { 
+    } else if (url === "reino-submundo.html" && perguntasAcertadas < 6) { 
+        console.log(perguntasAcertadas);
         alert("Você precisa responder a pelo menos 6 perguntas para acessar esta página.");
         canRedirect = false; 
-    } else if (url === ".html" && totalPerguntasRespondidas < 9) {
+    } else if (url === ".html" && perguntasAcertadas < 9) {
+        console.log(perguntasAcertadas);
         alert("Você precisa responder a pelo menos 9 perguntas para acessar esta página."); 
         canRedirect = false; 
     } 
     
     if (canRedirect) {
+        console.log(perguntasAcertadas);
         setTimeout(() => {
             overlay.style.transition = 'opacity 2s';
             overlay.style.opacity = '1';

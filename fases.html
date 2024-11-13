@@ -9,7 +9,26 @@
 <body>
     <div class="overlay" id="overlay"></div>
     <div class="top-frame"></div>
-    <button class="exit-button"id="exitButton">Sair</button>
+
+    <div class="superior">
+        <button class="exit-button" id="exitButton">Sair</button>
+        <div class="caixa">
+            <img src="img/caminho.png" alt="Escolha seu guia">
+        </div>
+        
+        <div class="perfil">
+            
+            <img src="img/perfil.png" alt="" class="img-perfil">
+            <div class="name" id="getName"></div>
+            <div class="points">
+                <div class="pontuation" id="pontuation">
+                    <div class="pontuation-wrapper" id="pontuation-wrapper">
+                        <h3 id="pontuation-text"></h3>
+                    </div><!--pontuation-wrapper-->
+                </div><!--pontuation-->
+            </div>
+        </div> <!-- Fechar .perfil aqui -->
+    </div> 
 
     <div id="myModal" class="modal">
         <div class="modal-content">
@@ -21,7 +40,6 @@
             </div>
         </div>
     </div>
-    <img src="img/caminho.png" alt="Escolha seu guia" class="caixa">
 
     <div class="video-background">
         <video autoplay loop muted>
@@ -30,48 +48,45 @@
     </div>
     
     <div class="overlay-background"></div>
-    <div class="perfil">
-        <div class="name" id="getName"></div>
-        <img src="img/perfil.png" alt="" class="img-perfil">
-        <div class="points">
-            <div class="pontuation" id="pontuation"></div><!--pontuation-->
+
+    <div class="central">
+        <div class="path">
+            <div class="phase">
+                <img src="img/reino-demeter.png" alt="Reino de Demeter" class="portal-image" onclick="fadeOutAndRedirect('reino-demeter.html')">
+                <img src="img/particles-petalas.gif" alt="Brilho" class="brightness-effect">
+            
+                <p>REINO DE DEMÉTER</p>
+            </div>
+            
+            <div class="phase">
+                <img src="img/reino-poseidon.png" alt="Reino de Poseidon" class="portal-image"onclick="fadeOutAndRedirect('reino-poseidon.html')">
+                <img src="img/particles-water.gif" alt="Brilho" class="brightness-effect"> 
+                <img src="img/cadeado.png" alt="circle" class="circle" id="circle-1">
+
+                <p>REINO DE POSEIDON</p>
+            </div>
+            
+            <div class="phase">
+                <img src="img/reino-submundo.png" alt="Submundo" class="portal-image"onclick="fadeOutAndRedirect('reino-submundo.html')">
+                <img src="img/particles-fire.gif" alt="Brilho" class="brightness-effect"> 
+                <img src="img/cadeado.png" alt="circle" class="circle" id="circle-2">
+                <p>SUBMUNDO</p>
+            </div>
+            
+            <div class="phase">
+                <img src="img/reino-olimpo.png" alt="Monte Olimpo" class="portal-image"onclick="fadeOutAndRedirect('.html')">
+                <img src="img/nuvens.gif" alt="Brilho" class="brightness-effect1"> 
+                <img src="img/particles-briho.gif" alt="Brilho" class="brightness-effect"> 
+                <img src="img/cadeado.png" alt="circle" class="circle" id="circle-3">
+
+                <p>MONTE OLIMPO</p>
+            </div>
         </div>
+
     </div>
-    <div class="path">
-        <div class="phase">
-            <img src="img/reino-demeter.png" alt="Reino de Demeter" class="portal-image" onclick="fadeOutAndRedirect('reino-demeter.html')">
-            <img src="img/particles-petalas.gif" alt="Brilho" class="brightness-effect">
-        
-            <p>REINO DE DEMÉTER</p>
-        </div>
-        
-        <div class="phase">
-            <img src="img/reino-poseidon.png" alt="Reino de Poseidon" class="portal-image"onclick="fadeOutAndRedirect('reino-poseidon.html')">
-            <img src="img/particles-water.gif" alt="Brilho" class="brightness-effect"> 
-            <img src="img/cadeado.png" alt="circle" class="circle" id="circle-1">
-
-            <p>REINO DE POSEIDON</p>
-        </div>
-        
-        <div class="phase">
-            <img src="img/reino-submundo.png" alt="Submundo" class="portal-image"onclick="fadeOutAndRedirect('reino-submundo.html')">
-            <img src="img/particles-fire.gif" alt="Brilho" class="brightness-effect"> 
-            <img src="img/cadeado.png" alt="circle" class="circle" id="circle-2">
-            <p>SUBMUNDO</p>
-        </div>
-        
-        <div class="phase">
-            <img src="img/reino-olimpo.png" alt="Monte Olimpo" class="portal-image"onclick="fadeOutAndRedirect('.html')">
-            <img src="img/nuvens.gif" alt="Brilho" class="brightness-effect1"> 
-            <img src="img/particles-briho.gif" alt="Brilho" class="brightness-effect"> 
-            <img src="img/cadeado.png" alt="circle" class="circle" id="circle-3">
-
-            <p>MONTE OLIMPO</p>
-        </div>
+    <div class="final">
+        <div class="bottom-frame"></div>
     </div>
-
-    <div class="bottom-frame"></div>
-    
     <script src="js/script.js" defer></script>
     <script src="js/pontuacao-fases.js" defer></script>
     <script src="js/fases.js" defer></script>

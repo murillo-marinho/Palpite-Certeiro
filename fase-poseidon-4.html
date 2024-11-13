@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palpite Certeiro</title>
+    <link rel="stylesheet" href="./css/fase-temis-zeus-atena.css">
+</head>
+<body>
+    <div class="video-background">
+        <video autoplay loop muted>
+            <source src="video\fase_poseidon.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="overlay-background"></div>
+
+    <div class="container">
+        <header>
+            <button type="button" onclick="return history.back()">VOLTAR</button>
+
+            <div class="pontuation" id="pontuation">
+                <div class="pontuation-wrapper" id="pontuation-wrapper">
+                    <h3 id="pontuation-text"></h3>
+                </div><!--pontuation-wrapper-->
+            </div><!--pontuation-->
+
+            <div class="help">
+                <img src="./img/guia-ajuda.gif" alt="Guia de ajuda" id="btn_ajuda_guia">
+            </div><!--help-->
+        </header>
+
+        <main>
+            <div class="main-wrapper">
+                <div class="questions">
+                    <h3 id="mudarPerguntaParaDica">
+                        Em uma antiga história grega, Poseidon, ofendido por Ulisses, jurou dificultar seu retorno para casa após a Guerra de Troia. Poseidon disse: “Se eu estiver contra ele, então as tempestades o perseguirão em cada trecho do mar.” Durante a viagem, Ulisses enfrentou inúmeras tempestades e quase naufragou várias vezes.
+Diante dessa história, o que podemos concluir?  </h3>
+                </div><!--questions-->
+
+                <input type="hidden" name="page4" id="page4">
+    
+                <div class="responses">
+                    <div class="response-single" id="single_res_1_questao_4_fase_poseidon">
+                        <button type="button" id="res_1_questao_4_fase_poseidon">Poseidon estava contra Ulisses, pois ele enfrentou tempestades no mar.</button>
+                    </div><!--response-single-->
+    
+                    <div class="response-single" id="single_res_2_questao_4_fase_poseidon">
+                        <button type="button" id="res_2_questao_4_fase_poseidon"> Ulisses enfrentou tempestades, mas Poseidon não estava envolvido.</button>
+                    </div><!--response-single-->
+    
+                    <div class="response-single" id="single_res_3_questao_4_fase_poseidon">
+                        <button type="button" id="res_3_questao_4_fase_poseidon"> Poseidon favoreceu Ulisses, mas ainda assim surgiram tempestades.</button>
+                    </div><!--response-single-->
+    
+                    <div class="response-single" id="single_res_4_questao_4_fase_poseidon">
+                        <button type="button" id="res_4_questao_4_fase_poseidon"> As tempestades surgiram por motivos naturais, sem relação com Poseidon.</button>
+                    </div><!--response-single-->
+                </div><!--responses-->
+            </div><!--main-wrapper-->
+        
+            <div class="modal_guia" id="modal-guia">
+                <div class="initial">
+                    <h3 id="nome_guia"></h3>
+
+                    <button type="button" id="btn_fechar_modal">X</button>
+                </div>
+                
+                <p id="poderes"></p>
+                
+                <button type="button" id="btn_confirmar_ajuda">Confirmar Ajuda</button>
+            </div><!--modal_guia-->
+        </main>
+    </div><!--container-->
+
+    <script src="js/script.js" defer></script> 
+    <script src="js/perguntas-poseidon.js" defer></script>
+    <script src="js/pontuacao-poseidon.js" defer></script>
+    <script src="js/ajuda-guia-pergunta.js" defer></script>
+</body>
+</html>

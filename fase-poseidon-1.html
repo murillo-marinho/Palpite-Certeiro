@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palpite Certeiro </title>
+    <link rel="stylesheet" href="./css/fase-temis-zeus-atena.css">
+</head>
+<body>
+    <div class="video-background">
+        <video autoplay loop muted>
+            <source src="video\fase_poseidon.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="overlay-background"></div>
+
+    <div class="container">
+        <header>
+            <button type="button" onclick="return history.back()">VOLTAR</button>
+
+            <div class="pontuation" id="pontuation">
+                <div class="pontuation-wrapper" id="pontuation-wrapper">
+                    <h3 id="pontuation-text"></h3>
+                </div><!--pontuation-wrapper-->
+            </div><!--pontuation-->
+
+            <div class="help">
+                <img src="./img/guia-ajuda.gif" alt="Guia de ajuda" id="btn_ajuda_guia">
+            </div><!--help-->
+        </header>
+
+        <main>
+            <div class="main-wrapper">
+                <div class="questions">
+                    <h3 id="mudarPerguntaParaDica">
+                        Se Poseidon está irritado, então ele causa grandes tempestades no mar. Hoje à noite, uma tempestade surgiu do nada. Sempre que há uma tempestade dessas, Poseidon está irritado.   
+                        O que podemos concluir logicamente?  </h3>
+                </div><!--questions-->
+
+                <input type="hidden" name="page1" id="page1">
+    
+                <div class="responses">
+                    <div class="response-single" id="single_res_1_questao_1_fase_poseidon">
+                        <button type="button" id="res_1_questao_1_fase_poseidon"> Poseidon não está irritado, então não causa tempestades.</button>
+                    </div><!--response-single-->
+    
+                    <div class="response-single" id="single_res_2_questao_1_fase_poseidon">
+                        <button type="button" id="res_2_questao_1_fase_poseidon"> Se há uma tempestade, então Poseidon está irritado.</button>
+                    </div><!--response-single-->
+    
+                    <div class="response-single" id="single_res_3_questao_1_fase_poseidon">
+                        <button type="button" id="res_3_questao_1_fase_poseidon"> Se Poseidon não está irritado, então a tempestade não foi causada por ele.</button>
+                    </div><!--response-single-->
+    
+                    <div class="response-single" id="single_res_4_questao_1_fase_poseidon">
+                        <button type="button" id="res_4_questao_1_fase_poseidon"> Poseidon está irritado apenas quando não há tempestades.</button>
+                    </div><!--response-single-->
+                </div><!--responses-->
+            </div><!--main-wrapper-->
+        
+            <div class="modal_guia" id="modal-guia">
+                <div class="initial">
+                    <h3 id="nome_guia"></h3>
+
+                    <button type="button" id="btn_fechar_modal">X</button>
+                </div>
+                
+                <p id="poderes"></p>
+                
+                <button type="button" id="btn_confirmar_ajuda">Confirmar Ajuda</button>
+            </div><!--modal_guia-->
+        </main>
+    </div><!--container-->
+
+    <script src="js/script.js" defer></script> 
+    <script src="js/perguntas-poseidon.js" defer></script>
+    <script src="js/pontuacao-poseidon.js" defer></script>
+    <script src="js/ajuda-guia-pergunta.js" defer></script>
+</body>
+</html>

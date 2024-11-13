@@ -1,16 +1,12 @@
-function redirect() {
-    document.body.style.transition = 'opacity 2s';
-    document.body.style.opacity = '0';
-
-    setTimeout(() => {
-        window.location.href = 'Fases.html';
-    }, 2000);
-}
-
 window.onload = function() {
     document.body.style.opacity = '1';
     startTyping();
 };
+
+localStorage.setItem('icone_guia_escondido',false);
+localStorage.removeItem('limitePoderesTemisLocalStorage');
+localStorage.removeItem('limitePoderesAtenaLocalStorage');
+localStorage.removeItem('limitePoderesZeusLocalStorage');
 
 const dialogue = [
     "Eu sou Hades, o deus do Submundo.","",
@@ -54,6 +50,6 @@ function redirect() {
     document.body.style.opacity = '0';
 
     setTimeout(() => {
-        window.location.href = 'Fases.html';
+        window.location.href = 'fase-submundo-1.html';
     }, 2000);
 }

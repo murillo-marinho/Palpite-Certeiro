@@ -1,11 +1,51 @@
+@keyframes animationBtnConfirm {
+    0%{
+        position: relative;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    25%{
+        position: relative;
+        top: 30.2%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    50%{
+        position: relative;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    100%{
+        position: relative;
+        top: 30.2%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+.oculto_btn_help{
+    opacity: 0;
+}
+
+.baixar_pontuation{
+    top: 90px;
+}
+
 html, body{
     height: 100vh;
+    font-family: "Lora", serif; 
 }
 
 .video-background {
@@ -15,7 +55,7 @@ html, body{
     width: 100%;
     height: 100%;
     overflow: hidden;
-    z-index: -2000;
+    z-index: -100;
 }
 
 video {
@@ -44,17 +84,15 @@ header > button[type=button]{
     border: 3px solid #d69d73;
     font-size: 20px;
     font-weight: 400;
-    border: 2px solid #d69d73;
-background-color: rgba(255, 255, 255, 0.1);
-color: #fff;
-text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-cursor: pointer;
-transition: background-color 0.3s ease, color 0.3s ease;
-    background-color: rgba(253, 237, 21,0.1);
     cursor: pointer;
     letter-spacing: 0.8px;
     width: 210px;
     transition: 0.2s ease-in;
+    border: 2px solid #d69d73;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 header > button[type=button]:active{
@@ -70,17 +108,28 @@ div.help img{
     box-shadow: 0 0 30px 30px rgba(207, 201, 211, 0.252);
     border-radius: 50%;
     cursor: pointer;
+    z-index: 2000;
 }
 
 div.pontuation{
-    width: 200px;
-    height: 27px;
-    border-radius: 30px;
-    border: 3px solid #d69d73;
     position: absolute;
-    top: 150px;
+    top: 135px;
     left: 50%;
     transform: translateX(-50%);
+    border: 3px solid #d69d73;
+    border-radius: 30px;
+    background-color: transparent;
+    color: #444;
+    width: 200px;
+    height: 27px;
+}
+
+div.pontuation-wrapper{
+    background-color: #333;
+    color: #f5f5f5;
+    border-radius: 30px;
+    width: 100px;
+    height: 21px;
 }
 
 /**main */
@@ -143,6 +192,86 @@ div.response-single button{
     font-size: 17px;
 }
 
+/**modal guia*/
+.modal_guia{
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 105vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 100;
+}
+
+.modal_guia .initial{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.modal_guia h3{
+    font-size: 27px;
+    font-weight: 400;
+    color: #f5f5f5;
+}
+
+.modal_guia #btn_fechar_modal{
+    background-color: transparent;
+    border: 0;
+    font-size: 27px;
+    color: #f5f5f5;
+    cursor: pointer;
+}
+
+.modal_guia p{
+    color: #f5f5f5;
+    padding: 20px;
+    text-align: justify;
+}
+
+.modal_guia #btn_confirmar_ajuda{
+    animation-name: animationBtnConfirm;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+    width: 150px;
+    cursor: pointer;
+    outline: 0;
+    border: 0;
+    border-radius: 5px;
+    padding: 10px;
+}
+.overlay-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #6c2f5d;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3;
+    z-index: -99;
+}
+
+.overlay-background-1 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.2;
+    z-index: -99;
+}
+
+
 @media (width < 1280px){
     div.responses{
         display: flex;
@@ -165,6 +294,10 @@ div.response-single button{
 
     div.help img{
         right: 20%;
+    }
+
+    .modal_guia{
+        height: 125vh;
     }
 }
 
@@ -213,17 +346,4 @@ div.response-single button{
         width: 70px;
         height: 70px;  
     }
-}
-
-.overlay-background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #6c2f5d;
-    background-size: cover;
-    background-position: center;
-    opacity: 0.3;
-    z-index: -1000;
 }

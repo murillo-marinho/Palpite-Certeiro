@@ -1,16 +1,16 @@
-function redirect() {
-    document.body.style.transition = 'opacity 2s';
-    document.body.style.opacity = '0';
-
-    setTimeout(() => {
-        window.location.href = 'Fases.html';
-    }, 2000);
-}
-
 window.onload = function() {
     document.body.style.opacity = '1';
     startTyping();
 };
+
+
+localStorage.setItem('icone_guia_escondido',false);
+localStorage.removeItem('limitePoderesTemisLocalStorage');
+localStorage.removeItem('limitePoderesAtenaLocalStorage');
+localStorage.removeItem('limitePoderesZeusLocalStorage');
+
+//btnAjudaGuia.style.display = "block";
+//pontuation.style.top = "150px";
 
 const dialogue = [
     "Eu sou Poseidon, o deus dos mares.","",
@@ -54,6 +54,6 @@ function redirect() {
     document.body.style.opacity = '0';
 
     setTimeout(() => {
-        window.location.href = 'Fases.html';
+        window.location.href = 'fase-poseidon-1.html';
     }, 2000);
 }

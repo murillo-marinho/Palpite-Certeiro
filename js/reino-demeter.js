@@ -3,6 +3,12 @@ window.onload = function() {
     startTyping();
 };
 
+localStorage.setItem('points',0);
+localStorage.setItem('icone_guia_escondido',false);
+localStorage.removeItem('limitePoderesTemisLocalStorage');
+localStorage.removeItem('limitePoderesAtenaLocalStorage');
+localStorage.removeItem('limitePoderesZeusLocalStorage');
+
 const dialogue = [
     "Eu sou Deméter, a deusa da colheita e da fertilidade.","",
     "Meu reino, repleto de vida e abundância, está ameaçado por forças sombrias que desejam destruir o que construímos.","",
@@ -45,6 +51,6 @@ function redirect() {
     document.body.style.opacity = '0';
 
     setTimeout(() => {
-        window.location.href = 'fase-temis-1.html';
+        window.location.href = 'fase-demeter-1.html';
     }, 2000);
 }

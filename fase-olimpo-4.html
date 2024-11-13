@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palpite Certeiro - Fase 1</title>
+    <link rel="stylesheet" href="./css/fase-temis-zeus-atena.css">
+</head>
+<body>
+    <div class="video-background">
+        <video autoplay loop muted>
+            <source src="video/background-olimpo.webm" type="video/mp4">
+        </video>
+    </div>
+    <div class="overlay-background-1"></div>
+    <div class="container">
+        <header>
+            <button type="button" onclick="return history.back()">VOLTAR</button>
+
+            <div class="pontuation" id="pontuation">
+                <div class="pontuation-wrapper" id="pontuation-wrapper">
+                    <h3 id="pontuation-text"></h3>
+                </div><!--pontuation-wrapper-->
+            </div><!--pontuation-->
+
+            <div class="help">
+                <img src="./img/guia-ajuda.gif" alt="Guia de ajuda" id="btn_ajuda_guia">
+            </div><!--help-->
+        </header>
+
+        <main>
+            <div class="main-wrapper">
+                <div class="questions">
+                    <h3 id="mudarPerguntaParaDica">
+                        No Monte Olimpo, Zeus, o deus dos trovões, estabelece uma regra para o clima: "Se houver nuvens no céu, então choverá". Considerando essa regra, qual das opções abaixo indica que choverá?
+                    </h3>
+                </div><!--questions-->
+        
+                <input type="hidden" name="page16" id="page16">
+        
+                <div class="responses">
+                    <div class="response-single" id="single_res_1_questao_1_fase_olimpo">
+                        <button type="button" id="res_1_questao_1_fase_olimpo"> Não há nuvens no céu e está chovendo.</button>
+                    </div><!--response-single-->
+        
+                    <div class="response-single" id="single_res_2_questao_1_fase_olimpo">
+                        <button type="button" id="res_2_questao_1_fase_olimpo"> Há nuvens no céu e está chovendo.</button>
+                    </div><!--response-single-->
+        
+                    <div class="response-single" id="single_res_3_questao_1_fase_olimpo">
+                        <button type="button" id="res_3_questao_1_fase_olimpo"> Há nuvens no céu e não está chovendo.</button>
+                    </div><!--response-single-->
+        
+                    <div class="response-single" id="single_res_4_questao_1_fase_olimpo">
+                        <button type="button" id="res_4_questao_1_fase_olimpo"> Não há nuvens no céu e não está chovendo.</button>
+                    </div><!--response-single-->
+                </div><!--responses-->
+            </div><!--main-wrapper-->
+
+            <div class="modal_guia" id="modal-guia">
+                <h3 id="nome_guia"></h3>
+                <p id="poderes"></p>
+                <button type="button" id="btn_fechar_modal">X</button>
+    
+                <button type="button" id="btn_confirmar_ajuda">Confirmar Ajuda</button>
+            </div><!--modal_guia-->
+        </main>
+        
+    </div><!--container-->
+
+    <script src="js/script.js" defer></script> 
+    <script src="js/perguntas-monte-olimpo.js" defer></script>
+    <script src="js/pontuacao-monte-olimpo.js" defer></script>
+    <script src="js/ajuda-guia-pergunta.js" defer></script>
+</body>
+</html>

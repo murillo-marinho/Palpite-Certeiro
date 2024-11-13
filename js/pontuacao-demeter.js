@@ -1,42 +1,56 @@
 document.addEventListener('DOMContentLoaded', () => {
-    var perguntasAcertadas = localStorage.getItem('perguntasAcertadasDemeter') ? parseInt(localStorage.getItem('perguntasAcertadasDemeter')) : null;
-    if(perguntasAcertadas === null){
-        perguntasAcertadas = 0;
-    }
-
     const pontuation = document.getElementById('pontuation');
+    const pontuationWrapper = document.getElementById('pontuation-wrapper');
+    const totalPerguntasRespondidas = localStorage.getItem('totalPerguntasRespondidas') ? parseInt(localStorage.getItem('totalPerguntasRespondidas')) : 1;
+    console.log(totalPerguntasRespondidas);
+    const page1 = document.getElementById('page1');
+    const page2 = document.getElementById('page2');
+    const page3 = document.getElementById('page3');
+    const page4 = document.getElementById('page4');
+    const pontuationText= document.getElementById('pontuation-text');
 
-    let pontuationActual = localStorage.getItem('points') ? parseInt(localStorage.getItem('points')) + 1 : 0;
-    resto = 0;
-        
-    if(pontuationActual === 1){
-        pontuationActual =  33.33;
-        resto = 66.66;
-        console.log(pontuationActual);
-    console.log(resto);
+    let questaoAtualDemeter = localStorage.getItem('questaoAtualDemeter');
 
-        pontuation.style.background= "linear-gradient(to right, rgba(12, 14, 90,0.9) "+pontuationActual+"%, #fff "+resto+"%)";
-    }else if(pontuationActual === 11){
-        pontuationActual =  66.66;
-        resto = 33.33;
-        console.log(pontuationActual);
-    console.log(resto);
+    let perguntasAcertadas = questaoAtualDemeter;
 
-        pontuation.style.background= "linear-gradient(to right, rgba(12, 14, 90,0.9) "+pontuationActual+"%, #fff "+resto+"%)";
-    }else if(pontuationActual === 21){
-        pontuationActual = 100;
-        resto = 0;
-        console.log(pontuationActual);
-    console.log(resto);
-
-        pontuation.style.background= "linear-gradient(to right, rgba(12, 14, 90,0.9) "+pontuationActual+"%, #fff "+resto+"%)";
+    if(page1 !== null){
+        pontuationWrapper.style.width = "65px";
+        pontuationWrapper.style.borderTopLeftRadius = "30px";
+        pontuationWrapper.style.borderBottomLeftRadius = "30px";
     }
-    
-    console.log(pontuationActual);
-    console.log(resto);
 
-    pontuation.innerText = perguntasAcertadas + "/3";
-    pontuation.style.color = "rgb(0,200,200)";
-    pontuation.style.textAlign = "center";
+    if(page2 !== null){
+        pontuationWrapper.style.width = "130px";
+        pontuationWrapper.style.borderTopLeftRadius = "30px";
+        pontuationWrapper.style.borderBottomLeftRadius = "30px";
+    }
 
+    if(page3 !== null){
+        pontuationWrapper.style.width = "190px";
+        pontuationWrapper.style.borderRadius = "30px";
+    }
+
+    if(page4 !== null){
+        if(totalPerguntasRespondidas === 1){
+            pontuationWrapper.style.width = "65px";
+            pontuationWrapper.style.borderTopLeftRadius = "30px";
+            pontuationWrapper.style.borderBottomLeftRadius = "30px";
+        }
+
+        if(totalPerguntasRespondidas === 2){
+            pontuationWrapper.style.width = "130px";
+            pontuationWrapper.style.borderTopLeftRadius = "30px";
+            pontuationWrapper.style.borderBottomLeftRadius = "30px";
+        }
+
+        if(totalPerguntasRespondidas === 3){
+            pontuationWrapper.style.width = "190px";
+            pontuationWrapper.style.borderRadius = "30px";
+        }
+    }
+
+    pontuationText.innerText = perguntasAcertadas + "/3";
+    pontuationText.style.position = "absolute";
+    pontuationText.style.left = "50%";
+    pontuationText.style.transform = "translateX(-50%)";
 });
